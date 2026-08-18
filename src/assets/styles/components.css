@@ -1,0 +1,111 @@
+@import url('./variables.css');
+
+/* Custom Utility Classes mapped to SRS Tokens */
+.bg-phase-menstrual { background-color: var(--phase-menstrual); }
+.bg-phase-follicular { background-color: var(--phase-follicular); }
+.bg-phase-ovulation { background-color: var(--phase-ovulation); }
+.bg-phase-luteal { background-color: var(--phase-luteal); }
+
+.border-phase-menstrual { border-color: var(--phase-menstrual); }
+.border-phase-follicular { border-color: var(--phase-follicular); }
+.border-phase-ovulation { border-color: var(--phase-ovulation); }
+.border-phase-luteal { border-color: var(--phase-luteal); }
+
+/* Card & Surface Styling */
+.card-surface {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease-in-out;
+}
+.card-surface:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Button Variants */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary-dark {
+  background-color: var(--primary-dark);
+  color: var(--primary-dark-contrast);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary-dark:hover {
+  background-color: var(--primary-dark-hover);
+}
+
+/* Mood Selector Buttons */
+.mood-btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.mood-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+.mood-btn.active {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 0 2px #FFFFFF;
+}
+
+/* Modal Overlay & Card */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--overlay);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  border-radius: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Toast Container */
+#toast {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 60;
+  background-color: var(--text-primary);
+  color: #FFFFFF;
+  padding: 0.875rem 1.25rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

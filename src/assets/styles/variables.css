@@ -1,0 +1,61 @@
+:root {
+  /* System Fonts */
+  --font-family: 'Plus Jakarta Sans', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Primary Action Colors (SRS v1.2 Level 1 & 2) */
+  --primary: #8FA344;           /* Olive Green - Main CTA & Follicular */
+  --primary-hover: #7A8C38;
+  --primary-contrast: #FFFFFF;
+
+  --primary-dark: #D0618C;      /* Deep Magenta - Emphasis & Menstruation */
+  --primary-dark-hover: #B84E78;
+  --primary-dark-contrast: #FFFFFF;
+
+  /* Accent & Surface Colors (SRS v1.2 Level 3 & 4) */
+  --secondary: #F6B6C1;         /* Rose Pink - Ovulation & Secondary Accent */
+  --secondary-hover: #F0A5B0;
+  --secondary-contrast: #2D1B2D;
+
+  --tertiary: #FAD6D5;          /* Salmon Pink - Luteal & Surface Background */
+  --tertiary-contrast: #2D1B2D;
+
+  /* Base Backgrounds (SRS v1.2 Level 5) */
+  --bg-primary: #FFF0F3;        /* Warm Peach - Main App Background */
+  --bg-secondary: #FFFFFF;      /* Pure White - Cards & Modals */
+  --bg-tertiary: #FAD6D5;       /* Subtle Areas */
+
+  /* Text Colors */
+  --text-primary: #2D1B2D;      /* Dark Purple-Gray */
+  --text-secondary: #5D4A5D;    /* Medium Purple-Gray */
+  --text-tertiary: #8B7B8B;     /* Muted Purple-Gray */
+  --text-disabled: #BBAABB;     /* Disabled Text */
+
+  /* Borders & Dividers */
+  --border: #E8D0D0;            /* Soft Pink Border */
+  --border-strong: #D0618C;     /* Magenta Border */
+  --divider: #F0B0C0;
+
+  /* 4 Phase Colors */
+  --phase-menstrual: #D0618C;   /* Deep Magenta */
+  --phase-follicular: #8FA344;  /* Olive Green */
+  --phase-ovulation: #F6B6C1;   /* Rose Pink */
+  --phase-luteal: #FAD6D5;      /* Salmon Pink */
+  --phase-unrecorded: #E8D0D0;  /* Light Gray-Pink */
+
+  /* 5 Mood Colors */
+  --mood-happy: #8FA344;        /* Olive Green */
+  --mood-neutral: #F6B6C1;      /* Rose Pink */
+  --mood-sad: #8B7B8B;          /* Muted Purple */
+  --mood-angry: #D0618C;        /* Deep Magenta */
+  --mood-lazy: #BBAABB;         /* Gray */
+
+  /* Shadow Elevation */
+  --shadow-sm: 0 1px 2px rgba(45, 27, 45, 0.05);
+  --shadow-md: 0 4px 6px rgba(45, 27, 45, 0.1);
+  --shadow-lg: 0 10px 15px rgba(45, 27, 45, 0.12);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #8FA344 0%, #D0618C 100%);
+  --gradient-secondary: linear-gradient(135deg, #F6B6C1 0%, #FAD6D5 100%);
+  --gradient-warm: linear-gradient(135deg, #FCE6C6 0%, #F6B6C1 50%, #D0618C 100%);
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Fase Folikuler - CleanCycle</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            follicular: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-teal-50/50 to-green-100/30 min-h-screen text-slate-800 font-sans pb-12 antialiased">
+
+  <!-- TOP BAR / HEADER -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-emerald-100 shadow-sm">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+      <button onclick="window.history.back()" class="w-10 h-10 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 flex items-center justify-center transition-all active:scale-95 border border-emerald-200/60">
+        <i class="fa-solid fa-arrow-left text-sm"></i>
+      </button>
+      <div class="text-center">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 bg-emerald-100/70 px-2.5 py-0.5 rounded-full border border-emerald-200">
+          Hari 6 - 13 Siklus
+        </span>
+        <h1 class="font-extrabold text-slate-900 text-base sm:text-lg">Fase Folikuler</h1>
+      </div>
+      <button class="w-10 h-10 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 flex items-center justify-center transition-all border border-emerald-200/60">
+        <i class="fa-regular fa-bookmark text-sm"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 pt-5 space-y-5">
+
+    <!-- HERO BANNER KARTU UTAMA -->
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 p-6 sm:p-8 text-white shadow-xl shadow-emerald-500/20">
+      <!-- Background Decorative Blur Circle -->
+      <div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-white/10 backdrop-blur-2xl pointer-events-none"></div>
+      <div class="absolute -left-12 -bottom-12 w-36 h-36 rounded-full bg-black/10 backdrop-blur-xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1 rounded-full text-xs font-semibold text-white">
+            <i class="fa-solid fa-seedling text-emerald-200 text-xs"></i>
+            <span>High Energy & Fresh Start</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
+            Energi & Motivasi Meningkat Pesat
+          </h2>
+          <p class="text-white/90 text-xs sm:text-sm max-w-md leading-relaxed font-normal">
+            Tubuhmu sedang menumbuhkan folikel sel telur baru. Peningkatan estrogen memberikan kejernihan pikiran, fokus, dan stamina fisik yang prima.
+          </p>
+        </div>
+
+        <!-- Big Icon Badge -->
+        <div class="self-end sm:self-center flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-3xl sm:text-4xl shadow-inner text-emerald-100">
+          <i class="fa-solid fa-seedling animate-bounce"></i>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="mt-6 pt-5 border-t border-white/20 grid grid-cols-3 gap-2 sm:gap-4 text-center">
+        <div class="bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/20">
+          <p class="text-[10px] text-emerald-100 font-medium">Hormon Estrogen</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Meningkat Tajam</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/20">
+          <p class="text-[10px] text-emerald-100 font-medium">Tingkat Energi</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Tinggi & Optimal</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/20">
+          <p class="text-[10px] text-emerald-100 font-medium">Kebutuhan Utama</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Protein & Aktivitas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB NAVIGATION BAR -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <button onclick="switchTab('overview')" id="tab-btn-overview" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+        <i class="fa-solid fa-book-open mr-1.5"></i> Ringkasan
+      </button>
+      <button onclick="switchTab('nutrition')" id="tab-btn-nutrition" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-emerald-50 border border-emerald-100">
+        <i class="fa-solid fa-utensils mr-1.5 text-emerald-600"></i> Nutrisi
+      </button>
+      <button onclick="switchTab('activity')" id="tab-btn-activity" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-emerald-50 border border-emerald-100">
+        <i class="fa-solid fa-person-running mr-1.5 text-emerald-600"></i> Aktivitas
+      </button>
+      <button onclick="switchTab('selfcare')" id="tab-btn-selfcare" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-emerald-50 border border-emerald-100">
+        <i class="fa-solid fa-brain mr-1.5 text-emerald-600"></i> Self-Care
+      </button>
+    </div>
+
+    <!-- TAB CONTENT 1: RINGKASAN & HORMON -->
+    <div id="tab-overview" class="tab-content space-y-4">
+      
+      <!-- Apa yang terjadi di dalam tubuh -->
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-emerald-100 shadow-sm space-y-3">
+        <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xs">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <h3>Proses Biologis Tubuh</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Kelenjar hipofisis melepaskan <i class="italic font-medium">Follicle-Stimulating Hormone (FSH)</i> yang memicu ovarium mematangkan folikel sel telur. Salah satu folikel dominan akan tumbuh untuk dilepaskan pada fase ovulasi berikutnya.
+        </p>
+        <div class="p-3.5 bg-emerald-50/70 rounded-2xl border border-emerald-100/80 text-xs text-emerald-900 space-y-1">
+          <p class="font-bold flex items-center gap-1.5 text-emerald-800">
+            <i class="fa-solid fa-chart-line text-emerald-600"></i> Perubahan Hormonal:
+          </p>
+          <p class="text-slate-600 leading-normal">
+            Kadar <strong class="text-emerald-950">Estrogen</strong> merangkak naik secara bertahap, membantu membangun kembali jaringan dinding rahim serta melancarkan aliran darah ke otak dan otot.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ciri & Gejala Umum (Card Grid) -->
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-emerald-100 shadow-sm space-y-3">
+        <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-sparkles text-emerald-600"></i>
+          Manfaat & Sensasi Tubuh yang Dirasakan
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <!-- Item 1 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-emerald-50/60 to-teal-50/40 border border-emerald-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Stamina & Daya Tahan Maksimal</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Tubuh memproses karbohidrat dan energi secara efisien.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-emerald-50/60 to-teal-50/40 border border-emerald-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Fokus & Motivasi Kerja</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Estrogen merangsang dopamin untuk kejernihan berpikir.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-emerald-50/60 to-teal-50/40 border border-emerald-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Kulit Lebih Fresh & Glowing</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Produksi kolagen alami kulit terdorong naik.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-emerald-50/60 to-teal-50/40 border border-emerald-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-smile-beam"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Mood Cenderung Optimis</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Kembali bersemangat melakukan hal-hal baru.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 2: NUTRISI & MIKRONUTRIEN -->
+    <div id="tab-nutrition" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-emerald-100 shadow-sm space-y-4">
+        <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xs">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3>Panduan Makanan & Asupan Fase Folikuler</h3>
+        </div>
+
+        <div class="space-y-3 text-xs text-slate-600">
+          <!-- Anjuran makanan -->
+          <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100 space-y-2">
+            <h4 class="font-bold text-emerald-950 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-600"></i> Sangat Direkomendasikan:
+            </h4>
+            <ul class="list-disc list-inside space-y-1.5 text-slate-700 pl-1">
+              <li><strong class="text-slate-900">Protein Tanpa Lemak:</strong> Dada ayam, ikan salmon, tahu/tempe, dan telur untuk pembentukan jaringan jaringan tubuh.</li>
+              <li><strong class="text-slate-900">Makanan Segar & Sayuran Hijau:</strong> Brokoli, asparagus, kubis, dan zucchini yang membantu metabolisme estrogen.</li>
+              <li><strong class="text-slate-900">Karbohidrat Kompleks:</strong> Oatmeal, beras merah, quinoa untuk pasokan energi stabil sepanjang hari.</li>
+              <li><strong class="text-slate-900">Fitoestrogen Alami:</strong> Biji rami (flaxseed), biji labu, dan edamame untuk menjaga keseimbangan hormon.</li>
+            </ul>
+          </div>
+
+          <!-- Kurangi makanan -->
+          <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-100 space-y-2">
+            <h4 class="font-bold text-amber-900 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> Tips Tambahan:
+            </h4>
+            <ul class="list-disc list-inside space-y-1.5 text-slate-700 pl-1">
+              <li><strong class="text-slate-900">Hindari Gula Murni Berlebih:</strong> Agar tidak memicu kenaikan insulin mendadak saat metabolisme tubuh sedang optimal.</li>
+              <li><strong class="text-slate-900">Konsumsi Makanan Ringan Segar:</strong> Seperti jus hijau, smoothies buah segar, dan salad ringan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 3: AKTIVITAS & OLAHRAGA -->
+    <div id="tab-activity" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-emerald-100 shadow-sm space-y-4">
+        <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xs">
+            <i class="fa-solid fa-person-running"></i>
+          </div>
+          <h3>Rekomendasi Latihan & Produktivitas</h3>
+        </div>
+
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Ini adalah jendela waktu terbaik dalam siklusmu untuk meningkatkan intensitas olahraga, memulai tantangan baru, serta menyelesaikan tugas-tugas rumit.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-1">
+            <div class="flex items-center gap-2 text-emerald-700 font-bold">
+              <i class="fa-solid fa-dumbbell text-emerald-600"></i> Latihan Beban & Kardio
+            </div>
+            <p class="text-slate-600 text-[11px]">Memanfaatkan energi tinggi untuk pemulihan otot yang cepat dan peningkatan stamina.</p>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-emerald-50/50 border border-emerald-100 space-y-1">
+            <div class="flex items-center gap-2 text-emerald-700 font-bold">
+              <i class="fa-solid fa-lightbulb text-emerald-600"></i> Brainstorming & Proyek Baru
+            </div>
+            <p class="text-slate-600 text-[11px]">Kejernihan pikiran mendukung daya serap materi baru, negosiasi, dan perencanaan strategis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 4: SELF-CARE CHECKLIST -->
+    <div id="tab-selfcare" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-emerald-100 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+            <div class="w-7 h-7 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xs">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3>Checklist Fase Folikuler Hari Ini</h3>
+          </div>
+          <span class="text-[10px] bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full">New Goals</span>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50/40 border border-emerald-100 hover:bg-emerald-50/80 transition-all cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-emerald-300">
+            <span class="text-slate-700 font-medium">Buat rencana/target mingguan saat fokus pikiran tajam</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50/40 border border-emerald-100 hover:bg-emerald-50/80 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-emerald-300">
+            <span class="text-slate-700 font-medium">Lakukan sesi olahraga kardio / latihan beban ringan hingga sedang</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50/40 border border-emerald-100 hover:bg-emerald-50/80 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-emerald-300">
+            <span class="text-slate-700 font-medium">Santap sajian protein tinggi dan sayuran hijau segar</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50/40 border border-emerald-100 hover:bg-emerald-50/80 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-emerald-300">
+            <span class="text-slate-700 font-medium">Coba pelajari keterampilan baru atau selesaikan tugas tertunda</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIONABLE INSIGHT BANNER -->
+    <section class="bg-emerald-950 text-white p-5 rounded-3xl space-y-2 shadow-lg shadow-emerald-950/20">
+      <div class="flex items-center gap-2 text-emerald-300 font-bold text-xs">
+        <i class="fa-solid fa-rocket text-emerald-400"></i>
+        <span>Tips Memaksimalkan Fase Folikuler</span>
+      </div>
+      <p class="text-xs text-emerald-100/90 leading-relaxed">
+        Gunakan fase ini untuk mengambil keputusan penting, mempelajari hal baru, dan merencanakan jadwal sibukmu. Lonjakan estrogen adalah booster energi alami terbaik untuk performa harianmu.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT UNTUK SWAP TAB -->
+  <script>
+    function switchTab(tabName) {
+      // Hide all contents
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      
+      // Reset all buttons style
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+        btn.classList.add('bg-white', 'text-slate-600', 'hover:bg-emerald-50', 'border', 'border-emerald-100');
+      });
+
+      // Show selected tab content
+      const targetContent = document.getElementById(`tab-${tabName}`);
+      if (targetContent) targetContent.classList.remove('hidden');
+
+      // Highlight active button
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-emerald-50', 'border', 'border-emerald-100');
+        activeBtn.classList.add('bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+      }
+    }
+  </script>
+</body>
+</html>

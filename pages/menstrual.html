@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Fase Menstruasi - CleanCycle</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            menstrual: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              300: '#fda4af',
+              400: '#fb7185',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#be123c',
+              800: '#9f1239',
+              900: '#881337',
+              950: '#4c0519',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-rose-50 via-pink-50/50 to-rose-100/30 min-h-screen text-slate-800 font-sans pb-12 antialiased">
+
+  <!-- TOP BAR / HEADER -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-rose-100 shadow-sm">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+      <button onclick="window.history.back()" class="w-10 h-10 rounded-2xl bg-rose-50 hover:bg-rose-100 text-rose-700 flex items-center justify-center transition-all active:scale-95 border border-rose-200/60">
+        <i class="fa-solid fa-arrow-left text-sm"></i>
+      </button>
+      <div class="text-center">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-rose-500 bg-rose-100/70 px-2.5 py-0.5 rounded-full border border-rose-200">
+          Hari 1 - 5 Siklus
+        </span>
+        <h1 class="font-extrabold text-slate-900 text-base sm:text-lg">Fase Menstruasi</h1>
+      </div>
+      <button class="w-10 h-10 rounded-2xl bg-rose-50 hover:bg-rose-100 text-rose-700 flex items-center justify-center transition-all border border-rose-200/60">
+        <i class="fa-regular fa-bookmark text-sm"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 pt-5 space-y-5">
+
+    <!-- HERO BANNER KARTU UTAMA -->
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-rose-600 via-rose-500 to-pink-600 p-6 sm:p-8 text-white shadow-xl shadow-rose-500/20">
+      <!-- Background Decorative Blur Circle -->
+      <div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-white/10 backdrop-blur-2xl pointer-events-none"></div>
+      <div class="absolute -left-12 -bottom-12 w-36 h-36 rounded-full bg-black/10 backdrop-blur-xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1 rounded-full text-xs font-semibold text-white">
+            <i class="fa-solid fa-droplet text-rose-200 text-xs"></i>
+            <span>Rest & Self-Care Phase</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
+            Saatnya Istirahat & Memulihkan Diri
+          </h2>
+          <p class="text-white/90 text-xs sm:text-sm max-w-md leading-relaxed font-normal">
+            Dinding rahim meluruh dan hormon berada pada titik terendah. Tubuhmu sedang bekerja keras memproses pembersihan alami.
+          </p>
+        </div>
+
+        <!-- Big Icon Badge -->
+        <div class="self-end sm:self-center flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-3xl sm:text-4xl shadow-inner text-rose-100">
+          <i class="fa-solid fa-droplet animate-pulse"></i>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="mt-6 pt-5 border-t border-white/20 grid grid-cols-3 gap-2 sm:gap-4 text-center">
+        <div class="bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/20">
+          <p class="text-[10px] text-rose-100 font-medium">Hormon Estrogen</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Sangat Rendah</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/20">
+          <p class="text-[10px] text-rose-100 font-medium">Tingkat Energi</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Minimal</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/20">
+          <p class="text-[10px] text-rose-100 font-medium">Kebutuhan Utama</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Zat Besi & Rest</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB NAVIGATION BAR -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <button onclick="switchTab('overview')" id="tab-btn-overview" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-rose-600 text-white shadow-md shadow-rose-600/20">
+        <i class="fa-solid fa-book-open mr-1.5"></i> Ringkasan
+      </button>
+      <button onclick="switchTab('nutrition')" id="tab-btn-nutrition" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-rose-50 border border-rose-100">
+        <i class="fa-solid fa-utensils mr-1.5 text-rose-500"></i> Nutrisi
+      </button>
+      <button onclick="switchTab('activity')" id="tab-btn-activity" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-rose-50 border border-rose-100">
+        <i class="fa-solid fa-person-walking mr-1.5 text-rose-500"></i> Aktivitas
+      </button>
+      <button onclick="switchTab('selfcare')" id="tab-btn-selfcare" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-rose-50 border border-rose-100">
+        <i class="fa-solid fa-heart-pulse mr-1.5 text-rose-500"></i> Self-Care
+      </button>
+    </div>
+
+    <!-- TAB CONTENT 1: RINGKASAN & HORMON -->
+    <div id="tab-overview" class="tab-content space-y-4">
+      
+      <!-- Apa yang terjadi di dalam tubuh -->
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-rose-100 shadow-sm space-y-3">
+        <div class="flex items-center gap-2 text-rose-800 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600 text-xs">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <h3>Proses Biologis Tubuh</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Menstruasi ditandai dengan luruhnya dilapisan dalam rahim (<i class="italic">endometrium</i>) bersama darah dan jaringan melalui vagina. Hal ini terjadi karena telur yang dilepaskan pada siklus sebelumnya tidak dibuahi.
+        </p>
+        <div class="p-3.5 bg-rose-50/70 rounded-2xl border border-rose-100/80 text-xs text-rose-900 space-y-1">
+          <p class="font-bold flex items-center gap-1.5 text-rose-800">
+            <i class="fa-solid fa-chart-line text-rose-500"></i> Perubahan Hormonal:
+          </p>
+          <p class="text-slate-600 leading-normal">
+            Kadar <strong class="text-rose-900">Estrogen</strong> dan <strong class="text-rose-900">Progesteron</strong> turun drastis. Penurunan ini memicu rasa lelah dan penurunan stamina sementara.
+          </p>
+        </div>
+      </div>
+
+      <!-- Gejala Umum (Card Grid) -->
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-rose-100 shadow-sm space-y-3">
+        <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-notes-medical text-rose-500"></i>
+          Gejala Umum yang Biasa Dirasakan
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <!-- Item 1 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-rose-50/60 to-pink-50/40 border border-rose-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Kram Perut (Dysmenorrhea)</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Kontraksi rahim meluruhkan jaringan dinding.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-rose-50/60 to-pink-50/40 border border-rose-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-bed"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Kelelahan & Lemas</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Pengeluaran zat besi dan hormon di titik terendah.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-rose-50/60 to-pink-50/40 border border-rose-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-child"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Nyeri Pinggang & Paha</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Penyebaran rasa pegal akibat kontraksi saraf lokal.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-rose-50/60 to-pink-50/40 border border-rose-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-face-sad-tear"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Mood Sensitif</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Efek fluktuasi hormon alami tubuh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 2: NUTRISI & MIKRONUTRIEN -->
+    <div id="tab-nutrition" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-rose-100 shadow-sm space-y-4">
+        <div class="flex items-center gap-2 text-rose-800 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600 text-xs">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3>Panduan Makanan & Asupan</h3>
+        </div>
+
+        <div class="space-y-3 text-xs text-slate-600">
+          <!-- Anjuran makanan -->
+          <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-100 space-y-2">
+            <h4 class="font-bold text-emerald-900 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-600"></i> Sangat Direkomendasikan:
+            </h4>
+            <ul class="list-disc list-inside space-y-1.5 text-slate-700 pl-1">
+              <li><strong class="text-slate-900">Kaya Zat Besi:</strong> Bayam, kangkung, daging sapi tanpa lemak, hati ayam, dan tempe/tahu.</li>
+              <li><strong class="text-slate-900">Vitamin C:</strong> Jeruk, stoberi, paprika (membantu penyerapan zat besi secara optimal).</li>
+              <li><strong class="text-slate-900">Air Hangat & Teh Herbal:</strong> Teh jahe atau chamomile untuk meredakan kram perut.</li>
+              <li><strong class="text-slate-900">Makanan Kaya Magnesium:</strong> Dark chocolate (>70%), pisang, dan kacang almond.</li>
+            </ul>
+          </div>
+
+          <!-- Hindari makanan -->
+          <div class="p-4 rounded-2xl bg-rose-50/80 border border-rose-200/80 space-y-2">
+            <h4 class="font-bold text-rose-900 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-rose-600"></i> Kurangi Dulu:
+            </h4>
+            <ul class="list-disc list-inside space-y-1.5 text-slate-700 pl-1">
+              <li><strong class="text-slate-900">Garam Berlebih:</strong> Memicu kembung dan retensi cairan di perut.</li>
+              <li><strong class="text-slate-900">Kafein Tinggi:</strong> Dapat mempersempit pembuluh darah dan memperparah kram.</li>
+              <li><strong class="text-slate-900">Minuman Dingin / Bersoda:</strong> Pada beberapa orang memicu perut kurang nyaman.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 3: AKTIVITAS & OLAHRAGA -->
+    <div id="tab-activity" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-rose-100 shadow-sm space-y-4">
+        <div class="flex items-center gap-2 text-rose-800 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600 text-xs">
+            <i class="fa-solid fa-person-walking"></i>
+          </div>
+          <h3>Rekomendasi Aktivitas Fisik</h3>
+        </div>
+
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Jangan memaksakan latihan berintensitas tinggi (HIIT atau angkat beban berat). Dengarkan sinyal tubuh dan pilih gerakan lembut yang melancarkan sirkulasi darah.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl bg-rose-50/50 border border-rose-100 space-y-1">
+            <div class="flex items-center gap-2 text-rose-700 font-bold">
+              <i class="fa-solid fa-spa text-rose-500"></i> Yoga Reflektif & Stretching
+            </div>
+            <p class="text-slate-600 text-[11px]">Gerakan Child's Pose dan Cat-Cow membantu melemaskan panggul dan meredakan nyeri pinggang.</p>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-rose-50/50 border border-rose-100 space-y-1">
+            <div class="flex items-center gap-2 text-rose-700 font-bold">
+              <i class="fa-solid fa-person-walking text-rose-500"></i> Jalan Santai (Light Walking)
+            </div>
+            <p class="text-slate-600 text-[11px]">Jalan sore 15-20 menit melepaskan endorfin alami penawar rasa sakit alami tubuh.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 4: SELF-CARE CHECKLIST -->
+    <div id="tab-selfcare" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-rose-100 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-rose-800 font-bold text-sm">
+            <div class="w-7 h-7 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600 text-xs">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3>Checklist Perawatan Diri Hari Ini</h3>
+          </div>
+          <span class="text-[10px] bg-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded-full">Self-Care</span>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-rose-50/40 border border-rose-100 hover:bg-rose-50/80 transition-all cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 rounded text-rose-600 focus:ring-rose-500 border-rose-300">
+            <span class="text-slate-700 font-medium">Gunakan kompres hangat di perut bawah selama 15-20 menit</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-rose-50/40 border border-rose-100 hover:bg-rose-50/80 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-rose-600 focus:ring-rose-500 border-rose-300">
+            <span class="text-slate-700 font-medium">Minum minimal 2 Liter air hangat</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-rose-50/40 border border-rose-100 hover:bg-rose-50/80 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-rose-600 focus:ring-rose-500 border-rose-300">
+            <span class="text-slate-700 font-medium">Ganti pembalut / produk menstruasi tiap 3-4 jam</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-rose-50/40 border border-rose-100 hover:bg-rose-50/80 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-rose-600 focus:ring-rose-500 border-rose-300">
+            <span class="text-slate-700 font-medium">Tidur lebih awal (minimal 7-8 jam malam ini)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- WARNING BANNER / KAPAN HARUS KONSULTASI -->
+    <section class="bg-rose-950 text-white p-5 rounded-3xl space-y-2 shadow-lg shadow-rose-950/20">
+      <div class="flex items-center gap-2 text-rose-300 font-bold text-xs">
+        <i class="fa-solid fa-shield-halved text-rose-400"></i>
+        <span>Kapan Harus Berkonsultasi ke Dokter?</span>
+      </div>
+      <p class="text-xs text-rose-100/90 leading-relaxed">
+        Segera temui dokter spesialis jika merasakan kram perut berlebih yang tidak mereda dengan obat nyeri bebas, perdarahan hebat hingga harus mengganti pembalut tiap 1 jam sekali, atau durasi haid lebih dari 8 hari berturut-turut.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT UNTUK SWAP TAB -->
+  <script>
+    function switchTab(tabName) {
+      // Hide all contents
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      
+      // Reset all buttons style
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-rose-600', 'text-white', 'shadow-md', 'shadow-rose-600/20');
+        btn.classList.add('bg-white', 'text-slate-600', 'hover:bg-rose-50', 'border', 'border-rose-100');
+      });
+
+      // Show selected tab content
+      const targetContent = document.getElementById(`tab-${tabName}`);
+      if (targetContent) targetContent.classList.remove('hidden');
+
+      // Highlight active button
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-rose-50', 'border', 'border-rose-100');
+        activeBtn.classList.add('bg-rose-600', 'text-white', 'shadow-md', 'shadow-rose-600/20');
+      }
+    }
+  </script>
+</body>
+</html>

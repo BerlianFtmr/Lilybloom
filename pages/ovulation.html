@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Fase Ovulasi - CleanCycle</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            ovulation: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              900: '#78350f',
+              950: '#451a03',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-yellow-50/60 to-amber-100/30 min-h-screen text-slate-800 font-sans pb-12 antialiased">
+
+  <!-- TOP BAR / HEADER -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-amber-100 shadow-sm">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+      <button onclick="window.history.back()" class="w-10 h-10 rounded-2xl bg-amber-50 hover:bg-amber-100 text-amber-700 flex items-center justify-center transition-all active:scale-95 border border-amber-200/60">
+        <i class="fa-solid fa-arrow-left text-sm"></i>
+      </button>
+      <div class="text-center">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-amber-700 bg-amber-100/80 px-2.5 py-0.5 rounded-full border border-amber-200">
+          Hari 14 - 16 Siklus
+        </span>
+        <h1 class="font-extrabold text-slate-900 text-base sm:text-lg">Fase Ovulasi</h1>
+      </div>
+      <button class="w-10 h-10 rounded-2xl bg-amber-50 hover:bg-amber-100 text-amber-700 flex items-center justify-center transition-all border border-amber-200/60">
+        <i class="fa-regular fa-bookmark text-sm"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 pt-5 space-y-5">
+
+    <!-- HERO BANNER KARTU UTAMA -->
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-500 via-yellow-500 to-amber-600 p-6 sm:p-8 text-white shadow-xl shadow-amber-500/20">
+      <!-- Background Decorative Blur Circle -->
+      <div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-white/15 backdrop-blur-2xl pointer-events-none"></div>
+      <div class="absolute -left-12 -bottom-12 w-36 h-36 rounded-full bg-black/10 backdrop-blur-xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-3 py-1 rounded-full text-xs font-semibold text-white">
+            <i class="fa-solid fa-sun text-yellow-100 text-xs"></i>
+            <span>Peak Fertility & Confidence</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
+            Puncak Energi & Kesuburan Tinggi
+          </h2>
+          <p class="text-white/95 text-xs sm:text-sm max-w-md leading-relaxed font-normal">
+            Lonjakan hormon LH memicu pelepasan sel telur matang. Ini adalah puncak daya tarik alami, kepercayaan diri, dan keberanian berkomunikasi.
+          </p>
+        </div>
+
+        <!-- Big Icon Badge -->
+        <div class="self-end sm:self-center flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-3xl sm:text-4xl shadow-inner text-amber-100">
+          <i class="fa-solid fa-sun animate-spin" style="animation-duration: 12s;"></i>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="mt-6 pt-5 border-t border-white/20 grid grid-cols-3 gap-2 sm:gap-4 text-center">
+        <div class="bg-white/15 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/25">
+          <p class="text-[10px] text-amber-100 font-medium">Hormon Estrogen & LH</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Puncak Tertinggi</p>
+        </div>
+        <div class="bg-white/15 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/25">
+          <p class="text-[10px] text-amber-100 font-medium">Tingkat Libido</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Mencapai Maksimal</p>
+        </div>
+        <div class="bg-white/15 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/25">
+          <p class="text-[10px] text-amber-100 font-medium">Kebutuhan Utama</p>
+          <p class="text-xs sm:text-sm font-bold text-white mt-0.5">Hidrasi & Antioksidan</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB NAVIGATION BAR -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <button onclick="switchTab('overview')" id="tab-btn-overview" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-amber-500 text-white shadow-md shadow-amber-500/20">
+        <i class="fa-solid fa-book-open mr-1.5"></i> Ringkasan
+      </button>
+      <button onclick="switchTab('nutrition')" id="tab-btn-nutrition" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-amber-50 border border-amber-100">
+        <i class="fa-solid fa-utensils mr-1.5 text-amber-600"></i> Nutrisi
+      </button>
+      <button onclick="switchTab('activity')" id="tab-btn-activity" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-amber-50 border border-amber-100">
+        <i class="fa-solid fa-bolt mr-1.5 text-amber-600"></i> Aktivitas
+      </button>
+      <button onclick="switchTab('selfcare')" id="tab-btn-selfcare" class="tab-btn flex-shrink-0 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-amber-50 border border-amber-100">
+        <i class="fa-solid fa-face-smile mr-1.5 text-amber-600"></i> Self-Care
+      </button>
+    </div>
+
+    <!-- TAB CONTENT 1: RINGKASAN & HORMON -->
+    <div id="tab-overview" class="tab-content space-y-4">
+      
+      <!-- Apa yang terjadi di dalam tubuh -->
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-amber-100 shadow-sm space-y-3">
+        <div class="flex items-center gap-2 text-amber-900 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-xs">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <h3>Proses Biologis Tubuh</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Lonjakan tajam <i class="italic font-medium">Luteinizing Hormone (LH)</i> memicu ovarium untuk melepaskan sel telur matang ke dalam saluran tuba falopi. Sel telur ini memiliki masa hidup sekitar 12–24 jam setelah dilepaskan.
+        </p>
+        <div class="p-3.5 bg-amber-50/80 rounded-2xl border border-amber-200/60 text-xs text-amber-950 space-y-1">
+          <p class="font-bold flex items-center gap-1.5 text-amber-900">
+            <i class="fa-solid fa-chart-line text-amber-600"></i> Perubahan Hormonal:
+          </p>
+          <p class="text-slate-600 leading-normal">
+            Kadar <strong class="text-amber-950">Estrogen</strong> berada di puncaknya sebelum sedikit menurun, sementara hormon <strong class="text-amber-950">Progesteron</strong> mulai diproduksi perlahan untuk mempersiapkan tubuh.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ciri & Gejala Umum (Card Grid) -->
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-amber-100 shadow-sm space-y-3">
+        <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-sparkles text-amber-500"></i>
+          Tanda-Tanda Utama Masa Ovulasi
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <!-- Item 1 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-amber-50/70 to-yellow-50/50 border border-amber-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Lendir Serviks Bening & Basa</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Tekstur elastis mirip putih telur mentah.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-amber-50/70 to-yellow-50/50 border border-amber-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-temperature-half"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Peningkatan Suhu Basal (BBT)</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Suhu tubuh naik sekitar 0.3–0.5°C pasca ovulasi.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-amber-50/70 to-yellow-50/50 border border-amber-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Dorongan Seksual Meningkat</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Puncak respon alami biologis untuk reproduksi.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="p-3 rounded-2xl bg-gradient-to-r from-amber-50/70 to-yellow-50/50 border border-amber-100 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+              <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-xs">Sensitivitas Indra & Kulit</h4>
+              <p class="text-[11px] text-slate-500 mt-0.5">Indra penciuman lebih tajam dan aura memikat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 2: NUTRISI & MIKRONUTRIEN -->
+    <div id="tab-nutrition" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-amber-100 shadow-sm space-y-4">
+        <div class="flex items-center gap-2 text-amber-900 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-xs">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3>Panduan Makanan & Asupan Masa Ovulasi</h3>
+        </div>
+
+        <div class="space-y-3 text-xs text-slate-600">
+          <!-- Anjuran makanan -->
+          <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/70 space-y-2">
+            <h4 class="font-bold text-amber-950 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-amber-600"></i> Makanan Pendukung Kualitas Sel Telur:
+            </h4>
+            <ul class="list-disc list-inside space-y-1.5 text-slate-700 pl-1">
+              <li><strong class="text-slate-900">Kaya Antioksidan:</strong> Buah beri (stroberi/blueberry), wortel, buah delima, dan tomat untuk melindungi kualitas sel telur.</li>
+              <li><strong class="text-slate-900">Asam Folat & Zinc:</strong> Biji labu, kacang almond, alpukat, dan asparagus untuk pematangan ovum.</li>
+              <li><strong class="text-slate-900">Makanan Kaya Serat:</strong> Membantu hati memproses dan membuang kelebihan sisa metabolisme estrogen.</li>
+              <li><strong class="text-slate-900">Cairan Refresing & Elektrolit:</strong> Air kelapa murni, infused water lemon & mentimun untuk menjaga kekentalan cairan tubuh.</li>
+            </ul>
+          </div>
+
+          <!-- Tips pencegahan kembung -->
+          <div class="p-4 rounded-2xl bg-yellow-50/70 border border-yellow-200/70 space-y-2">
+            <h4 class="font-bold text-yellow-900 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-shield-heart text-yellow-600"></i> Anjuran Penting:
+            </h4>
+            <ul class="list-disc list-inside space-y-1.5 text-slate-700 pl-1">
+              <li><strong class="text-slate-900">Batasi Makanan Olahan Olahan Sintetis:</strong> Kurangi pengawet agar mendukung kerja hati (liver) secara optimal.</li>
+              <li><strong class="text-slate-900">Cukupi Asupan Air Putih:</strong> Minimal 2.5 Liter/hari untuk menjaga hidrasi membran serviks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 3: AKTIVITAS & OLAHRAGA -->
+    <div id="tab-activity" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-amber-100 shadow-sm space-y-4">
+        <div class="flex items-center gap-2 text-amber-900 font-bold text-sm">
+          <div class="w-7 h-7 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-xs">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3>Aktivitas Fisik & Performa Maksimal</h3>
+        </div>
+
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Tingkat energi berada pada puncaknya! Gunakan periode ini untuk tantangan fisik tertinggi, presentasi besar, atau agenda sosial yang membutuhkan rasa percaya diri ekstra.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-100 space-y-1">
+            <div class="flex items-center gap-2 text-amber-800 font-bold">
+              <i class="fa-solid fa-fire-flame-curved text-amber-600"></i> Olahraga Intensitas Tinggi (HIIT)
+            </div>
+            <p class="text-slate-600 text-[11px]">Waktu terbaik untuk sesi bootcamp, lari cepat, atau kelas spin dengan performa fisik puncak.</p>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-100 space-y-1">
+            <div class="flex items-center gap-2 text-amber-800 font-bold">
+              <i class="fa-solid fa-comments text-amber-600"></i> Presentasi & Networking
+            </div>
+            <p class="text-slate-600 text-[11px]">Kemampuan komunikasi verbal dan karisma interpersonal alami sedang dalam performa terbaik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT 4: SELF-CARE CHECKLIST -->
+    <div id="tab-selfcare" class="tab-content space-y-4 hidden">
+      <div class="bg-white/80 backdrop-blur-md p-5 rounded-3xl border border-amber-100 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-amber-900 font-bold text-sm">
+            <div class="w-7 h-7 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-xs">
+              <i class="fa-solid fa-face-smile"></i>
+            </div>
+            <h3>Checklist Perawatan Masa Ovulasi</h3>
+          </div>
+          <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full">Fertility Window</span>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-amber-50/50 border border-amber-100 hover:bg-amber-50/90 transition-all cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-amber-300">
+            <span class="text-slate-700 font-medium">Catat perubahan tekstur cair serviks & suhu tubuh basal (BBT)</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-amber-50/50 border border-amber-100 hover:bg-amber-50/90 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-amber-300">
+            <span class="text-slate-700 font-medium">Lakukan strip tes ovulasi (OPK) jika sedang merencanakan kehamilan</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-amber-50/50 border border-amber-100 hover:bg-amber-50/90 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-amber-300">
+            <span class="text-slate-700 font-medium">Nikmati hidrasi air kelapa murni atau jus buah tinggi antioksidan</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-3 rounded-2xl bg-amber-50/50 border border-amber-100 hover:bg-amber-50/90 transition-all cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-amber-300">
+            <span class="text-slate-700 font-medium">Selesaikan diskusi penting / negosiasi dengan percaya diri</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIONABLE INSIGHT BANNER -->
+    <section class="bg-amber-950 text-white p-5 rounded-3xl space-y-2 shadow-lg shadow-amber-950/20">
+      <div class="flex items-center gap-2 text-amber-300 font-bold text-xs">
+        <i class="fa-solid fa-bullseye text-amber-400"></i>
+        <span>Tips Memaksimalkan Jendela Masa Subur</span>
+      </div>
+      <p class="text-xs text-amber-100/90 leading-relaxed">
+        Bagi kamu yang sedang merencanakan kehamilan, 2 hari sebelum hingga hari H ovulasi adalah masa yang paling potensial. Pastikan tubuh terhidrasi baik dan minimalkan stres fisik maupun pikiran.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT UNTUK SWAP TAB -->
+  <script>
+    function switchTab(tabName) {
+      // Hide all contents
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      
+      // Reset all buttons style
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-white', 'shadow-md', 'shadow-amber-500/20');
+        btn.classList.add('bg-white', 'text-slate-600', 'hover:bg-amber-50', 'border', 'border-amber-100');
+      });
+
+      // Show selected tab content
+      const targetContent = document.getElementById(`tab-${tabName}`);
+      if (targetContent) targetContent.classList.remove('hidden');
+
+      // Highlight active button
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-amber-50', 'border', 'border-amber-100');
+        activeBtn.classList.add('bg-amber-500', 'text-white', 'shadow-md', 'shadow-amber-500/20');
+      }
+    }
+  </script>
+</body>
+</html>

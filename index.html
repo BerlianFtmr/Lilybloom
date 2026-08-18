@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-pink-50/50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LilyBloom - Period & Mood Journal</title>
+  
+  <link rel="manifest" href="public/manifest.json">
+  <meta name="theme-color" content="#8FA344">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Modular Styles -->
+  <link rel="stylesheet" href="src/assets/styles/main.css">
+  <link rel="stylesheet" href="src/assets/styles/components.css">
+</head>
+
+<body class="font-sans text-slate-800 antialiased min-h-full flex flex-col selection:bg-rose-200 selection:text-rose-900">
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-5 right-5 z-50 transform translate-y-[-150%] opacity-0 transition-all duration-300 ease-out max-w-sm bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3">
+    <div id="toast-icon" class="text-rose-400 text-lg"><i class="fa-solid fa-circle-check"></i></div>
+    <div id="toast-message" class="text-sm font-medium">Pesan notifikasi</div>
+  </div>
+
+  <!-- Header App Bar -->
+  <header class="bg-white/80 backdrop-blur-md border-b border-rose-100 sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <!-- Logo Icon Bunga Lily -->
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center text-white shadow-md shadow-rose-200">
+          <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12,2C11.3,4.2 9.8,7.3 6.8,8.8C3.8,10.3 2,10 2,12C2,14 3.8,13.7 6.8,15.2C9.8,16.7 11.3,19.8 12,22C12.7,19.8 14.2,16.7 17.2,15.2C20.2,13.7 22,14 22,12C22,10 20.2,10.3 17.2,8.8C14.2,7.3 12.7,4.2 12,2Z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">LilyBloom</span>
+          <span class="hidden sm:inline-block text-xs font-semibold px-2 py-0.5 ml-2 bg-rose-100 text-rose-700 rounded-full">Offline & Privat</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="btn-open-period-modal" class="px-3.5 py-2 bg-rose-500 hover:bg-rose-600 text-white text-xs sm:text-sm font-semibold rounded-xl transition-all shadow-sm hover:shadow-md flex items-center gap-2 active:scale-95">
+          <i class="fa-solid fa-plus text-xs"></i>
+          <span>Catat Haid</span>
+        </button>
+        <button id="btn-open-settings-modal" class="p-2 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors" title="Pengaturan">
+          <i class="fa-solid fa-gear text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+    <!-- Tab Navigation -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-rose-200/60 pb-3 gap-3 w-full">
+      <div class="grid grid-cols-3 gap-1.5 sm:flex sm:gap-2 w-full md:w-auto">
+        <!-- Tab 1: Beranda -->
+        <button data-tab="dashboard" id="tab-btn-dashboard" class="tab-btn px-2 sm:px-4 py-2.5 rounded-xl text-[11px] sm:text-xs md:text-sm font-bold transition-all flex items-center justify-center gap-1 sm:gap-2 bg-white text-rose-600 shadow-sm border border-rose-100 whitespace-nowrap">
+          <i class="fa-solid fa-chart-pie text-xs sm:text-sm"></i>
+          <span class="truncate">Beranda</span>
+        </button>
+
+        <!-- Tab 2: Kalender -->
+        <button data-tab="calendar" id="tab-btn-calendar" class="tab-btn px-2 sm:px-4 py-2.5 rounded-xl text-[11px] sm:text-xs md:text-sm font-bold text-slate-600 hover:text-rose-600 hover:bg-white/50 transition-all flex items-center justify-center gap-1 sm:gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-calendar-days text-xs sm:text-sm"></i>
+          <span class="truncate">Kalender</span>
+        </button>
+
+        <!-- Tab 3: Riwayat -->
+        <button data-tab="history" id="tab-btn-history" class="tab-btn px-2 sm:px-4 py-2.5 rounded-xl text-[11px] sm:text-xs md:text-sm font-bold text-slate-600 hover:text-rose-600 hover:bg-white/50 transition-all flex items-center justify-center gap-1 sm:gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-clock-rotate-left text-xs sm:text-sm"></i>
+          <span class="truncate">Riwayat</span>
+        </button>
+      </div>
+
+      <!-- Tombol PDF -->
+      <button id="btn-trigger-pdf-export" class="w-full md:w-auto px-3.5 py-2.5 bg-white hover:bg-rose-50 text-slate-700 hover:text-rose-600 border border-rose-200 rounded-xl text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-sm whitespace-nowrap active:scale-95">
+        <i class="fa-solid fa-file-pdf text-rose-500 text-sm"></i>
+        <span>Laporan Dokter (PDF)</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: DASHBOARD -->
+    <div id="tab-dashboard" class="tab-content space-y-6">
+      <div id="phase-card-container" class="relative overflow-hidden rounded-3xl p-6 sm:p-8 text-white shadow-xl transition-all duration-500 bg-gradient-to-br from-rose-500 to-pink-600">
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <div class="md:col-span-7 space-y-3">
+            <h1 id="current-phase-name" class="text-3xl sm:text-4xl font-extrabold tracking-tight">Fase Folikuler</h1>
+            <p id="current-phase-desc" class="text-white/90 text-sm leading-relaxed max-w-xl">
+              Tingkat estrogen mulai meningkat. Energi dan suasana hati kamu cenderung membaik.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-white/80">
+              <div class="flex items-center gap-1.5 bg-black/10 px-3 py-1.5 rounded-xl backdrop-blur-sm">
+                <i class="fa-regular fa-calendar-check text-rose-200"></i>
+                <span>Hari ke-<strong id="cycle-day-number" class="text-white text-sm">8</strong> dalam siklus</span>
+              </div>
+              <div class="flex items-center gap-1.5 bg-black/10 px-3 py-1.5 rounded-xl backdrop-blur-sm">
+                <i class="fa-solid fa-chart-line text-rose-200"></i>
+                <span>Estimasi Siklus: <strong id="est-cycle-length" class="text-white">28 Hari</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 bg-white/15 backdrop-blur-md p-5 rounded-2xl border border-white/20 space-y-3">
+            <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-white/90">
+              <span>Perasaan Hari Ini</span>
+            </div>
+            <div class="grid grid-cols-5 gap-2">
+              <button data-mood="lazy" class="mood-btn flex flex-col items-center justify-center p-2 rounded-2xl bg-white/70 hover:bg-slate-100 text-slate-700 border border-slate-200/80 shadow-sm transition-all group">
+                <i class="fa-regular fa-face-tired text-2xl text-slate-600 group-hover:scale-110 transition-transform"></i>
+                <span class="text-[10px] font-extrabold mt-1 text-slate-700">Malas</span>
+              </button>
+
+              <button data-mood="angry" class="mood-btn flex flex-col items-center justify-center p-2 rounded-2xl bg-rose-100/90 hover:bg-rose-200 text-rose-800 border border-rose-200 shadow-sm transition-all group">
+                <i class="fa-regular fa-face-angry text-2xl text-rose-600 group-hover:scale-110 transition-transform"></i>
+                <span class="text-[10px] font-extrabold mt-1 text-rose-800">Marah</span>
+              </button>
+
+              <button data-mood="sad" class="mood-btn flex flex-col items-center justify-center p-2 rounded-2xl bg-indigo-100/90 hover:bg-indigo-200 text-indigo-800 border border-indigo-200 shadow-sm transition-all group">
+                <i class="fa-regular fa-face-sad-tear text-2xl text-indigo-600 group-hover:scale-110 transition-transform"></i>
+                <span class="text-[10px] font-extrabold mt-1 text-indigo-800">Sedih</span>
+              </button>
+
+              <button data-mood="happy" class="mood-btn flex flex-col items-center justify-center p-2 rounded-2xl bg-emerald-100/90 hover:bg-emerald-200 text-emerald-800 border border-emerald-200 shadow-sm transition-all group">
+                <i class="fa-regular fa-face-smile text-2xl text-emerald-600 group-hover:scale-110 transition-transform"></i>
+                <span class="text-[10px] font-extrabold mt-1 text-emerald-800">Senang</span>
+              </button>
+
+              <button data-mood="neutral" class="mood-btn flex flex-col items-center justify-center p-2 rounded-2xl bg-amber-100/90 hover:bg-amber-200 text-amber-900 border border-amber-200 shadow-sm transition-all group">
+                <i class="fa-regular fa-face-meh text-2xl text-amber-600 group-hover:scale-110 transition-transform"></i>
+                <span class="text-[10px] font-extrabold mt-1 text-amber-900">Biasa</span>
+              </button>
+            </div>
+            <div class="space-y-2">
+              <input type="text" id="today-note-input" placeholder="Tuliskan catatan harian..." class="w-full text-xs px-3 py-2 rounded-xl bg-white/20 text-white placeholder-white/60 border border-white/20 focus:outline-none">
+              <button id="btn-save-today-log" class="w-full py-2 bg-white text-rose-700 font-bold text-xs rounded-xl hover:bg-rose-50 shadow-sm">
+                Simpan Refleksi Harian
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Phase Cards (Direct Navigation Link) -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-shapes text-rose-500"></i>
+            <span>Proyeksi 4 Fase Siklus Hormonal</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Menstruasi -->
+          <a href="./pages/menstrual.html" data-phase-card="menstrual" class="block cursor-pointer bg-rose-200/80 rounded-3xl p-1.5 pb-2.5 shadow-sm hover:-translate-y-1 transition-all duration-200 group">
+            <div class="bg-white rounded-2xl p-4 sm:p-5 space-y-3 shadow-sm border border-rose-100/50">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center">
+                  <i class="fa-solid fa-droplet text-lg text-rose-500"></i>
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-xl bg-rose-50 text-rose-600 border border-rose-100">Menstruasi</span>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-800 text-sm">Fase Menstruasi</h3>
+                <p id="dates-menstruasi" class="text-xs font-semibold text-rose-500 mt-1">-- s/d --</p>
+              </div>
+            </div>
+            <div class="px-4 pt-2 flex items-center justify-between text-[10px] font-extrabold tracking-wider text-rose-700 uppercase">
+              <span>Rest & Self Care</span>
+              <i class="fa-solid fa-angle-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Folikuler -->
+          <a href="./pages/follicular.html" data-phase-card="follicular" class="block cursor-pointer bg-emerald-200/80 rounded-3xl p-1.5 pb-2.5 shadow-sm hover:-translate-y-1 transition-all duration-200 group">
+            <div class="bg-white rounded-2xl p-4 sm:p-5 space-y-3 shadow-sm border border-emerald-100/50">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+                  <i class="fa-solid fa-seedling text-lg text-emerald-500"></i>
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100">Folikuler</span>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-800 text-sm">Fase Folikuler</h3>
+                <p id="dates-folikuler" class="text-xs font-semibold text-emerald-600 mt-1">-- s/d --</p>
+              </div>
+            </div>
+            <div class="px-4 pt-2 flex items-center justify-between text-[10px] font-extrabold tracking-wider text-emerald-700 uppercase">
+              <span>Energi Meningkat</span>
+              <i class="fa-solid fa-angle-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Ovulasi -->
+          <a href="./pages/ovulation.html" data-phase-card="ovulation" class="block cursor-pointer bg-amber-200/80 rounded-3xl p-1.5 pb-2.5 shadow-sm hover:-translate-y-1 transition-all duration-200 group">
+            <div class="bg-white rounded-2xl p-4 sm:p-5 space-y-3 shadow-sm border border-amber-100/50">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center">
+                  <i class="fa-solid fa-sun text-lg text-amber-500"></i>
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-xl bg-amber-50 text-amber-600 border border-amber-100">Ovulasi</span>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-800 text-sm">Fase Ovulasi</h3>
+                <p id="dates-ovulasi" class="text-xs font-semibold text-amber-600 mt-1">-- s/d --</p>
+              </div>
+            </div>
+            <div class="px-4 pt-2 flex items-center justify-between text-[10px] font-extrabold tracking-wider text-amber-800 uppercase">
+              <span>Puncak Masa Subur</span>
+              <i class="fa-solid fa-angle-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Luteal -->
+          <a href="./pages/luteal.html" data-phase-card="luteal" class="block cursor-pointer bg-purple-200/80 rounded-3xl p-1.5 pb-2.5 shadow-sm hover:-translate-y-1 transition-all duration-200 group">
+            <div class="bg-white rounded-2xl p-4 sm:p-5 space-y-3 shadow-sm border border-purple-100/50">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center">
+                  <i class="fa-solid fa-moon text-lg text-purple-500"></i>
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-xl bg-purple-50 text-purple-600 border border-purple-100">Luteal</span>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-800 text-sm">Fase Luteal</h3>
+                <p id="dates-luteal" class="text-xs font-semibold text-purple-600 mt-1">-- s/d --</p>
+              </div>
+            </div>
+            <div class="px-4 pt-2 flex items-center justify-between text-[10px] font-extrabold tracking-wider text-purple-700 uppercase">
+              <span>Fase Pra-PMS</span>
+              <i class="fa-solid fa-angle-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="pcos-banner" class="bg-amber-50/80 border border-amber-200 rounded-2xl p-4 flex items-start gap-3 text-amber-900 text-xs sm:text-sm hidden">
+        <i class="fa-solid fa-triangle-exclamation text-amber-500 text-lg mt-0.5"></i>
+        <div class="space-y-1">
+          <p class="font-bold">Info Pola Siklus Panjang / PCOS:</p>
+          <p class="text-amber-800 text-xs">Proyeksi fase dihitung dari acuan rata-rata historis kamu.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: KALENDER SIKLUS -->
+    <div id="tab-calendar" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-3xl p-6 border border-rose-100 shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+          <div class="flex items-center gap-3">
+            <h2 id="calendar-month-year" class="text-xl font-extrabold text-slate-800">Maret 2026</h2>
+            <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+              <button id="btn-prev-month" class="w-8 h-8 rounded-lg hover:bg-white text-slate-600 flex items-center justify-center">
+                <i class="fa-solid fa-chevron-left text-xs"></i>
+              </button>
+              <button id="btn-current-month" class="px-2.5 py-1 text-xs font-bold text-slate-700">Bulan Ini</button>
+              <button id="btn-next-month" class="w-8 h-8 rounded-lg hover:bg-white text-slate-600 flex items-center justify-center">
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 text-xs font-medium text-slate-600">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-rose-500"></span> Menstruasi</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> Folikuler</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-500"></span> Ovulasi</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-purple-500"></span> Luteal</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-7 text-center font-bold text-xs text-slate-400 tracking-wider">
+          <div>MIN</div><div>SEN</div><div>SEL</div><div>RAB</div><div>KAM</div><div>JUM</div><div>SAB</div>
+        </div>
+
+        <div id="calendar-days-grid" class="grid grid-cols-7 gap-1 sm:gap-2">
+          <!-- Grid Tanggal Dirender Via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: RIWAYAT HAID -->
+    <div id="tab-history" class="tab-content hidden space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm space-y-1">
+          <p class="text-xs font-bold text-slate-400 uppercase">Rata-rata Siklus</p>
+          <p class="text-2xl font-extrabold text-rose-600"><span id="stat-avg-cycle">28</span> <span class="text-xs font-semibold text-slate-500">Hari</span></p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm space-y-1">
+          <p class="text-xs font-bold text-slate-400 uppercase">Rata-rata Durasi Haid</p>
+          <p class="text-2xl font-extrabold text-rose-600"><span id="stat-avg-period">5</span> <span class="text-xs font-semibold text-slate-500">Hari</span></p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm space-y-1">
+          <p class="text-xs font-bold text-slate-400 uppercase">Total Siklus</p>
+          <p class="text-2xl font-extrabold text-slate-800"><span id="stat-total-cycles">0</span> <span class="text-xs font-semibold text-slate-500">Bulan</span></p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 border border-rose-100 shadow-sm space-y-4">
+        <div id="history-list-container" class="space-y-3">
+          <!-- Riwayat Dirender Via JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL: CATAT HAID -->
+  <div id="modal-period" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-5">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div>
+          <h3 class="font-bold text-slate-800 text-lg">Catat / Perbarui Haid</h3>
+          <p id="modal-period-subtitle" class="text-xs text-slate-500">Catat hari pertama haid atau selesaikan haid aktif.</p>
+        </div>
+        <button id="btn-close-period-modal" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-sm">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <form id="period-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Tanggal Mulai (Hari Pertama)</label>
+          <input type="date" id="input-start-date" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm">
+        </div>
+
+        <div id="container-end-date" class="space-y-1">
+          <label class="block text-xs font-bold text-slate-700 mb-1">Tanggal Selesai (Hari Terakhir)</label>
+          <input type="date" id="input-end-date" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm">
+        </div>
+
+        <div class="flex items-center gap-2 pt-1">
+          <input type="checkbox" id="checkbox-ongoing" class="w-4 h-4 text-rose-500 rounded border-slate-300 focus:ring-rose-400 cursor-pointer">
+          <label for="checkbox-ongoing" class="text-xs font-semibold text-rose-600 cursor-pointer">
+            Haid masih berlangsung (belum selesai)
+          </label>
+        </div>
+
+        <button type="submit" id="btn-submit-period" class="w-full py-2.5 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-bold text-xs shadow-md transition-all">
+          Simpan Catatan Haid
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: DETAIL TANGGAL -->
+  <div id="modal-day-detail" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-5">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div>
+          <h3 id="modal-day-title" class="font-extrabold text-slate-800 text-lg">Detail Hari</h3>
+          <span id="modal-day-phase-badge" class="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">Fase</span>
+        </div>
+        <button id="btn-close-day-modal" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-sm">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-5 gap-2">
+        <button data-mood="lazy" class="m-mood-btn p-2 rounded-xl border border-slate-200 flex flex-col items-center hover:bg-rose-50">
+          <i class="fa-regular fa-face-tired text-2xl"></i>
+          <span class="text-[10px] font-medium mt-1">Malas</span>
+        </button>
+        <button data-mood="angry" class="m-mood-btn p-2 rounded-xl border border-slate-200 flex flex-col items-center hover:bg-rose-50">
+          <i class="fa-regular fa-face-angry text-2xl"></i>
+          <span class="text-[10px] font-medium mt-1">Marah</span>
+        </button>
+        <button data-mood="sad" class="m-mood-btn p-2 rounded-xl border border-slate-200 flex flex-col items-center hover:bg-rose-50">
+          <i class="fa-regular fa-face-sad-tear text-2xl"></i>
+          <span class="text-[10px] font-medium mt-1">Sedih</span>
+        </button>
+        <button data-mood="happy" class="m-mood-btn p-2 rounded-xl border border-slate-200 flex flex-col items-center hover:bg-rose-50">
+          <i class="fa-regular fa-face-smile text-2xl"></i>
+          <span class="text-[10px] font-medium mt-1">Senang</span>
+        </button>
+        <button data-mood="neutral" class="m-mood-btn p-2 rounded-xl border border-slate-200 flex flex-col items-center hover:bg-rose-50">
+          <i class="fa-regular fa-face-meh text-2xl"></i>
+          <span class="text-[10px] font-medium mt-1">Biasa</span>
+        </button>
+      </div>
+
+      <textarea id="modal-day-notes" rows="3" placeholder="Tuliskan catatan harian..." class="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200"></textarea>
+      <button id="btn-save-modal-day-log" class="w-full py-2.5 bg-rose-500 text-white rounded-xl font-bold text-xs shadow-md">Simpan Catatan</button>
+    </div>
+  </div>
+
+  <!-- MODAL: PENGATURAN -->
+  <div id="modal-settings" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-5">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h3 class="font-bold text-slate-800 text-lg">Pengaturan</h3>
+        <button id="btn-close-settings" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-sm">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="flex items-center justify-between p-3 bg-slate-50 rounded-2xl">
+        <span class="text-xs font-bold">Notifikasi Web Lokal</span>
+        <button id="btn-notification-toggle" class="px-3 py-1.5 bg-slate-200 text-slate-700 rounded-xl text-xs font-bold">Aktifkan</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
