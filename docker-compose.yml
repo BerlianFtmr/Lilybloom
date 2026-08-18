@@ -1,0 +1,66 @@
+# ========================================
+# LilyBloom Period & Mood Journal - Docker Compose
+# Pendekatan 1: Satu Container Per Project
+# ========================================
+
+version: '3.8'
+
+services:
+  # Service utama LilyBloom
+  lilybloom-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lilybloom:latest
+    container_name: lilybloom-period-tracker
+
+    # Restart policy
+    restart: unless-stopped
+
+    # Port mapping
+    # Format: "HOST_PORT:CONTAINER_PORT"
+    # Container port 80 (default nginx)
+    # Host port 8081 (unik untuk project ini)
+    ports:
+      - "8081:80"
+
+    # Environment variables (opsional untuk nginx)
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+
+    # Resource limits (sesuaikan dengan VPS spec)
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'        # Max 50% CPU
+          memory: 128M      # Max 128MB RAM
+        reservations:
+          cpus: '0.25'       # Min 25% CPU
+          memory: 64M       # Min 64MB RAM
+
+    # Volume untuk logs (opsional)
+    volumes:
+      - nginx-logs:/var/log/nginx
+
+    # Network
+    networks:
+      - lilybloom-network
+
+    # Healthcheck override (opsional)
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+# Networks
+networks:
+  lilybloom-network:
+    driver: bridge
+
+# Volumes
+volumes:
+  nginx-logs:
+    driver: local
